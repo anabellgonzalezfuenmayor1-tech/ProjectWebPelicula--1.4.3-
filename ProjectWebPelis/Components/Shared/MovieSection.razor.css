@@ -1,0 +1,89 @@
+.setion-peliculas {
+    width: 80%;
+    padding: 40px 0;
+    margin: 0 auto;
+}
+
+.title-setion {
+    margin: 0 0 25px;
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+/* GRID DE PELÍCULAS */
+
+.setion-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+}
+
+/* MENSAJE */
+
+.mensaje-peliculas {
+    color: white;
+    font-size: 20px;
+}
+
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width: 1100px) {
+
+    .setion-peliculas {
+        width: 88%;
+    }
+
+    .setion-card {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 25px;
+    }
+}
+
+
+/* ========================= */
+/* TABLET PEQUEÑA */
+/* ========================= */
+
+@media (max-width: 800px) {
+
+    .setion-peliculas {
+        width: 90%;
+    }
+
+    .title-setion {
+        font-size: 32px;
+    }
+
+    .setion-card {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width: 500px) {
+
+    .setion-peliculas {
+        width: 92%;
+        padding: 30px 0;
+    }
+
+    .title-setion {
+        font-size: 27px;
+        margin-bottom: 20px;
+    }
+
+    .setion-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

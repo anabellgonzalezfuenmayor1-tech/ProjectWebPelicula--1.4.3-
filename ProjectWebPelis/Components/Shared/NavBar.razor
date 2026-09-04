@@ -1,0 +1,25 @@
+@inject NavigationManager navigationManager
+@inject SesionUsuarioService sesionUsuario
+
+<div class="header">
+    <h1 class="logo">@Logo</h1>
+    <div class="navegation">
+        <a href="/principal" class="link-navigation">PELICULAS</a>
+        <a href="/favoritas" class="link-navigation">FAVORITOS</a>
+        <a href="/historial" class="link-navigation">HISTORIAL</a>
+    </div>
+    <button class="btn-volver" @onclick="btnCerrarSesion_Click">CERRAR SESION</button>
+</div>
+
+@code {
+    [Parameter]
+    public string Logo { get; set; } = "PelisADSO";
+
+    public void btnCerrarSesion_Click()
+    {
+        sesionUsuario.CerrarSesion();
+        navigationManager.NavigateTo("/");
+    }
+
+
+}

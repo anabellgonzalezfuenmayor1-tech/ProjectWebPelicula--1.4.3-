@@ -1,0 +1,31 @@
+<div class="input-group">
+    <label for="@Id">@Label</label>
+
+    <InputText id="@Id"
+               Value="@Value"
+               ValueChanged="@ValueChanged"
+               ValueExpression="@(() => Value)"
+               placeholder="@Placeholder" 
+               type="@(IsPassword ? "password" : "text")"
+               />
+</div>
+
+@code {
+    [Parameter]
+    public string Id { get; set; } = string.Empty;
+
+    [Parameter]
+    public bool IsPassword { get; set; } = false;
+
+    [Parameter]
+    public string Label { get; set; } = string.Empty;
+
+    [Parameter]
+    public string? Placeholder { get; set; }
+
+    [Parameter]
+    public string? Value { get; set; }
+
+    [Parameter]
+    public EventCallback<string?> ValueChanged { get; set; }
+}

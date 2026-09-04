@@ -1,0 +1,69 @@
+﻿@page "/principal"
+@rendermode InteractiveServer
+@inject PeliculaServices peliculaServices
+@inject SesionUsuarioService sesionUsuario
+@inject NavigationManager navi
+
+<div class="base">
+    <div class="base-principal">
+        <Banner ImagenInicial="https://wallpapercave.com/wp/wp4686158.jpg">
+            <NavBar Logo="PelisADSO" />
+        </Banner>
+        <MovieSection Titulo="Todas tus peliculas"
+                      Peliculas="peliculas"
+                      PeliculasFavoritas="peliculasFavoritas"
+                      OnAgregarFavorito="OnAgregarFavorito"
+                      OnVerTrailer="OnVerTrailer" />
+    </div>
+</div>
+
+@code {
+    private List<PeliculasDTO> peliculas = new();
+    private List<PeliculasDTO> peliculasFavoritas = new();
+    private int userId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine("1. Entró a Principal");
+
+        if (!sesionUsuario.EstaLogueado)
+        {
+            Console.WriteLine("2. No está logueado");
+            navi.NavigateTo("/", forceLoad: true);
+            return;
+        }
+
+        Console.WriteLine("3. Usuario logueado");
+
+        userId = sesionUsuario.UsuarioId;
+
+        Console.WriteLine($"4. Usuario ID: {userId}");
+
+        peliculas = await peliculaServices.GetMovies();
+
+        Console.WriteLine($"5. Películas obtenidas: {peliculas.Count}");
+
+        peliculasFavoritas = await peliculaServices.GetListaFavoritas(userId);
+
+        Console.WriteLine($"6. Favoritas obtenidas: {peliculasFavoritas.Count}");
+    }
+    public async Task OnAgregarFavorito(PeliculasDTO pelicula)
+    {
+        if (pelicula.EsFavorito)
+        {
+            Console.WriteLine($"Agregando a favoritos: {pelicula.Nombre}");
+            await peliculaServices.AgregarFavorito(pelicula, userId);
+        }
+        else
+        {
+            Console.WriteLine($"Eliminando de favoritos: {pelicula.Nombre}");
+            await peliculaServices.EliminarFavorita(pelicula, userId);
+        }
+    }
+
+    public async Task OnVerTrailer(PeliculasDTO pelicula)
+    {
+        Console.WriteLine($"Registrando vista: {pelicula.Nombre}");
+        await peliculaServices.AgregarVista(pelicula, userId);
+    }
+}

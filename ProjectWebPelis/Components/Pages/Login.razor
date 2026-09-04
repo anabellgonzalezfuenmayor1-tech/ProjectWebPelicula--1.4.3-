@@ -1,0 +1,69 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@inject UsuarioService usuarioServices
+@inject SesionUsuarioService sesionUsuario
+@inject NavigationManager navi
+
+<div class="base">
+    <div class="base-login">
+    <div class="base-form">
+
+        <FormHeader Titulo="Bienvenido" Subtitulo="Inicia sesión en PelisADSO" />
+
+        <EditForm Model="user" OnValidSubmit="ValidarUsuario">
+
+            <LabeledInput Id="correo"
+                          Label="Correo electrónico"
+                          Placeholder="Digite su correo"
+                          @bind-Value="user.Correo" />
+
+            <LabeledInput Id="contraseña"
+                          Label="Contraseña"
+                          Placeholder="Digite su contraseña"
+                          @bind-Value="user.Contraseña"
+                          IsPassword="@is_pass"
+                          />
+
+            <PrimaryButton Texto="Iniciar sesión" />
+
+        </EditForm>
+
+        @if (!string.IsNullOrEmpty(mensaje))
+        {
+            <p class="mensaje">@mensaje</p>
+        }
+
+    </div>
+    </div>
+</div>
+
+
+@code {
+    bool is_pass = true;
+    Usuario user = new();
+    string mensaje = string.Empty;
+
+    private async Task ValidarUsuario()
+    {
+        mensaje = "Cargado...";
+
+        await Task.Delay(2000);
+
+        var usuarioValidado = await usuarioServices.ValidarLogin(user);
+
+        if (usuarioValidado is not null)
+        {
+            Console.WriteLine($"Usuario encontrado: {usuarioValidado.id}");
+
+            sesionUsuario.IniciarSesion(usuarioValidado.id);
+
+            Console.WriteLine($"UsuarioId en sesión: {sesionUsuario.UsuarioId}");
+            Console.WriteLine($"Está logueado: {sesionUsuario.EstaLogueado}");
+
+            navi.NavigateTo("/principal");
+            return;
+        }
+
+        mensaje = "Correo o contraseña incorrectos";
+    }
+}

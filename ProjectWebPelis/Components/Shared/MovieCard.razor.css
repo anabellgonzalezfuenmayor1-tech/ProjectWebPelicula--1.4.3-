@@ -1,0 +1,240 @@
+.movie-card {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: #11131a;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Imagen */
+
+.movie-image {
+    width: 100%;
+    height: 100%;
+}
+
+    .movie-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+    }
+
+
+/* Degradado inferior */
+
+.movie-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 55%;
+    background: linear-gradient( to top, rgba(8, 9, 15, 0.98) 0%, rgba(8, 9, 15, 0.85) 40%, rgba(8, 9, 15, 0.35) 75%, transparent 100% );
+    pointer-events: none;
+}
+
+
+/* Información */
+
+.movie-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 22px 18px 18px;
+    z-index: 2;
+}
+
+
+    /* Nombre de la película */
+
+    .movie-info h3 {
+        margin: 0 0 16px;
+        color: white;
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 1.25;
+        text-align: center;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 48px;
+    }
+
+
+/* Contenedor de botones */
+
+.movie-buttons {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+
+/* Estilo general de botones */
+
+.btn-favorito,
+.btn-trailer {
+    width: 50%;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+
+/* Favoritos */
+
+.btn-favorito {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+    .btn-favorito span:first-child {
+        font-size: 18px;
+    }
+.btn-no-favorito,
+.btn-trailer {
+    width: 50%;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* ========================= */
+/* FAVORITO PRESIONADO */
+/* ========================= */
+
+.btn-no-favorito {
+    color: white;
+    background-color: rgba(70, 105, 216, 0.25);
+    border: 1px solid rgba(70, 105, 216, 0.6);
+    box-shadow: 0 0 12px rgba(70, 105, 216, 0.15);
+}
+
+    .btn-no-favorito span:first-child {
+        font-size: 18px;
+    }
+
+    .btn-no-favorito:hover {
+        background-color: rgba(70, 105, 216, 0.35);
+        border-color: rgba(70, 105, 216, 0.8);
+        transform: translateY(-2px);
+    }
+
+
+/* ========================= */
+/* TRAILER */
+/* ========================= */
+
+.btn-trailer {
+    color: white;
+    background-color: #3159d8;
+    border: 1px solid #3159d8;
+}
+
+    .btn-trailer span:first-child {
+        font-size: 13px;
+    }
+
+    .btn-trailer:hover {
+        background-color: #4169e8;
+        border-color: #4169e8;
+        transform: translateY(-2px);
+    }
+
+/* Trailer */
+
+.btn-trailer {
+    color: white;
+    background-color: #3159d8;
+    border: 1px solid #3159d8;
+}
+
+    .btn-trailer span:first-child {
+        font-size: 13px;
+    }
+
+
+/* Hover de botones */
+
+.btn-favorito:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-trailer:hover {
+    background-color: #4169e8;
+    transform: translateY(-2px);
+}
+
+
+/* Hover de tarjeta */
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(70, 105, 220, 0.45);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+    .movie-card:hover .movie-image img {
+        transform: scale(1.05);
+    }
+
+
+/* Evita que el hover de los botones haga crecer la tarjeta */
+
+.movie-buttons button:hover,
+.movie-buttons a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .movie-card {
+        height: 380px;
+    }
+
+    .movie-info {
+        padding: 18px 14px 14px;
+    }
+
+        .movie-info h3 {
+            font-size: 17px;
+        }
+
+    .btn-favorito,
+    .btn-trailer {
+        height: 40px;
+        font-size: 13px;
+    }
+}

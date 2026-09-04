@@ -1,0 +1,42 @@
+/* Formulario */
+.base-form {
+    width: 25%;
+    min-width: 320px;
+    padding: 40px;
+    background-color: #171725;
+    border: 1px solid #3B2A5A;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.25);
+
+}
+.base-login{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+
+    justify-content:center;
+    align-items: center;
+}
+
+/* Enlace / mensaje */
+.mensaje {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #C4B5FD;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+
+    /* Enlace al pasar el mouse */
+    .mensaje:hover {
+        color: #38BDF8;
+    }
+
+
+/* Fondo del body */
+body {
+    margin: 0;
+    background-color: #0B0B0F;
+}

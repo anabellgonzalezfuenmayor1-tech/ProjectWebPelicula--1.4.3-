@@ -1,0 +1,62 @@
+﻿@page "/historial"
+@rendermode InteractiveServer
+@inject PeliculaServices peliculaServices
+@inject SesionUsuarioService sesionUsuario
+@inject NavigationManager navi
+
+<div class="base">
+    <div class="base-principal">
+
+        <Banner ImagenInicial="https://wallpapercave.com/wp/wp4686158.jpg">
+            <NavBar Logo="PelisADSO" />
+        </Banner>
+
+        <MovieSection Titulo="Historial de vistas"
+                      Peliculas="peliculas"
+                      PeliculasFavoritas="peliculasFavoritas"
+                      OnAgregarFavorito="AgregarFavorito" />
+
+    </div>
+</div>
+
+@code {
+
+    private List<PeliculasDTO> peliculas = new();
+    private List<PeliculasDTO> peliculasFavoritas = new();
+    private int userId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!sesionUsuario.EstaLogueado)
+        {
+            navi.NavigateTo("/", forceLoad: true);
+            return;
+        }
+
+        userId = sesionUsuario.UsuarioId;
+
+        peliculas = await peliculaServices
+            .GetListaVistas(userId);
+
+        peliculasFavoritas = await peliculaServices
+            .GetListaFavoritas(userId);
+    }
+
+    public async Task AgregarFavorito(PeliculasDTO pelicula)
+    {
+        if (pelicula.EsFavorito)
+        {
+            await peliculaServices.AgregarFavorito(
+                pelicula,
+                userId
+            );
+        }
+        else
+        {
+            await peliculaServices.EliminarFavorita(
+                pelicula,
+                userId
+            );
+        }
+    }
+}

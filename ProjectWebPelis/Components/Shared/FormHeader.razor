@@ -1,0 +1,12 @@
+<div class="form-header">
+    <h1>@Titulo</h1>
+    <p>@Subtitulo</p>
+</div>
+
+@code {
+    [Parameter]
+    public string Titulo { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Subtitulo { get; set; } = string.Empty;
+}

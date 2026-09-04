@@ -1,0 +1,82 @@
+<div class="movie-card">
+
+    <div class="movie-image">
+        <img src="@Pelicula.RutaImagen"
+             alt="@Pelicula.Nombre" />
+    </div>
+
+    <div class="movie-info">
+
+        <h3>@Pelicula.Nombre</h3>
+        <div class="movie-buttons">
+            <button class="@claseBotonFavorito"
+                    @onclick="AgregarFavorito">
+                <span>@(es_favorito ? "En Favoritos" : "Favoritos")</span>
+            </button>
+
+            <a class="btn-trailer"
+               href="@Pelicula.RutaTrailer"
+               target="_blank"
+               @onclick="VerTrailer">
+                <span>▶</span>
+                <span>Trailer</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+@code {
+    public string claseBotonFavorito = "btn-favorito";
+
+    [Parameter]
+    public EventCallback<PeliculasDTO> OnAgregarFavorito { get; set; }
+    public bool es_favorito = false;
+
+    [Parameter]
+    public bool EsFavorito { get; set; }
+
+    [Parameter]
+    public EventCallback<PeliculasDTO> OnVerTrailer { get; set; }
+
+
+    [Parameter]
+    public PeliculasDTO Pelicula { get; set; } = null!;
+
+    protected override void OnInitialized()
+    {
+        // Estado inicial real del boton, segun venga true o false
+        // desde el padre (lista de favoritas del usuario).
+        es_favorito = EsFavorito;
+        claseBotonFavorito = es_favorito ? "btn-no-favorito" : "btn-favorito";
+    }
+
+    private void AgregarFavorito()
+    {
+        // Alterna el propio estado (true/false), en vez de comparar
+        // con Pelicula.es_vista, que es un campo distinto (vista/no vista)
+        // y no representaba el estado del boton de favoritos.
+        es_favorito = !es_favorito;
+        claseBotonFavorito = es_favorito ? "btn-no-favorito" : "btn-favorito";
+
+        Pelicula.EsFavorito = es_favorito;
+
+        if (OnAgregarFavorito.HasDelegate)
+        {
+            OnAgregarFavorito.InvokeAsync(Pelicula);
+        }
+    }
+
+    private void VerTrailer()
+    {
+        // El link sigue navegando al trailer con normalidad (target="_blank");
+        // esto solo notifica al padre para registrar la vista en el historial.
+        if (OnVerTrailer.HasDelegate)
+        {
+            OnVerTrailer.InvokeAsync(Pelicula);
+        }
+    }
+
+}

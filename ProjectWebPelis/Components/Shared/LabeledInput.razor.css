@@ -1,0 +1,40 @@
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+
+    /* Label */
+    .input-group label {
+        color: #FFFFFF;
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+
+    /* Input de Blazor */
+    .input-group ::deep input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 13px 15px;
+        background-color: #0B0B0F;
+        color: #FFFFFF;
+        border: 1px solid #3B2A5A;
+        border-radius: 8px;
+        outline: none;
+        font-size: 14px;
+    }
+
+
+        /* Placeholder */
+        .input-group ::deep input::placeholder {
+            color: #6F687A;
+        }
+
+
+        /* Input seleccionado */
+        .input-group ::deep input:focus {
+            border-color: #7C3AED;
+            box-shadow: 0 0 8px rgba(124, 58, 237, 0.35);
+        }

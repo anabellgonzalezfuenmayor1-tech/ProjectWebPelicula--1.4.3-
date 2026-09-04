@@ -1,0 +1,51 @@
+<div class="setion-peliculas">
+
+    <h2 class="title-setion">
+        @Titulo
+    </h2>
+
+    @if (Peliculas is not null && Peliculas.Any())
+    {
+        <div class="setion-card">
+            @foreach (var pelicula in Peliculas)
+            {
+                <MovieCard Pelicula="pelicula"
+                    EsFavorito="@EsFavorita(pelicula)"
+                    OnAgregarFavorito="OnAgregarFavorito"
+                    OnVerTrailer="OnVerTrailer" />
+            }
+        </div>
+    }
+    else
+    {
+        <p class="mensaje-peliculas">
+            No hay películas disponibles.
+        </p>
+    }
+
+</div>
+
+@code {
+
+    [Parameter]
+    public string Titulo { get; set; } = "";
+
+    [Parameter]
+    public List<PeliculasDTO> Peliculas { get; set; } = new();
+
+    [Parameter]
+    public List<PeliculasDTO> PeliculasFavoritas { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<PeliculasDTO> OnAgregarFavorito { get; set; }
+
+    [Parameter]
+    public EventCallback<PeliculasDTO> OnVerTrailer { get; set; }
+
+    private bool EsFavorita(PeliculasDTO pelicula)
+    {
+        return PeliculasFavoritas.Any(
+            p => p.id == pelicula.id
+        );
+    }
+}
