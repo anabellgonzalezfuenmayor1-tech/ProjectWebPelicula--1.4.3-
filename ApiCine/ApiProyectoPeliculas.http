@@ -1,0 +1,6 @@
+@ApiProyectoPeliculas_HostAddress = http://localhost:5053
+
+GET {{ApiProyectoPeliculas_HostAddress}}
+Accept: application/json
+
+###

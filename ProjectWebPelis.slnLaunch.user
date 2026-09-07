@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "ApiCine\\ApiCine.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ProjectWebPelis\\ProjectWebPelis.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

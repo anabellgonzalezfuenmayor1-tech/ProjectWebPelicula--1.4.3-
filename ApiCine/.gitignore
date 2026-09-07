@@ -1,0 +1,6 @@
+#archivos compilados para las carpetas se coloca como /
+/bin
+/obj
+
+#archivo de configuraciones generales archivos solamente el nombre
+appsettings.Development.json

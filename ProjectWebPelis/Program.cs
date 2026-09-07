@@ -8,13 +8,13 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddHttpClient<UsuarioService>(client =>
-    client.BaseAddress = new Uri("http://localhost:5053")
+    client.BaseAddress = new Uri("http://localhost:5236")
 );
 builder.Services.AddHttpClient<CategoriaServices>(client =>
-    client.BaseAddress = new Uri("http://localhost:5053")
+    client.BaseAddress = new Uri("http://localhost:5236")
 );
 builder.Services.AddHttpClient<PeliculaServices>(client =>
-    client.BaseAddress = new Uri("http://localhost:5053")
+    client.BaseAddress = new Uri("http://localhost:5236")
 );
 builder.Services.AddScoped<SesionUsuarioService>();
 

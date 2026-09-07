@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6977CC07-1746-4556-8CFB-C49AD91D84A6}|ApiCine\\ApiCine.csproj|c:\\users\\ale_c\\source\\repos\\projectwebpelicula-(1.4.3)\\apicine\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6977CC07-1746-4556-8CFB-C49AD91D84A6}|ApiCine\\ApiCine.csproj|solutionrelative:apicine\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6977CC07-1746-4556-8CFB-C49AD91D84A6}|ApiCine\\ApiCine.csproj|c:\\users\\ale_c\\source\\repos\\projectwebpelicula-(1.4.3)\\apicine\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6977CC07-1746-4556-8CFB-C49AD91D84A6}|ApiCine\\ApiCine.csproj|solutionrelative:apicine\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F7023E1C-2713-ADC3-67D4-BE4660D05359}|ProjectWebPelis\\ProjectWebPelis.csproj|c:\\users\\ale_c\\source\\repos\\projectwebpelicula-(1.4.3)\\projectwebpelis\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F7023E1C-2713-ADC3-67D4-BE4660D05359}|ProjectWebPelis\\ProjectWebPelis.csproj|solutionrelative:projectwebpelis\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -35,6 +43,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\ApiCine\\Program.cs",
+              "RelativeDocumentMoniker": "ApiCine\\Program.cs",
+              "ToolTip": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\ApiCine\\Program.cs*",
+              "RelativeToolTip": "ApiCine\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T13:40:45.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\ApiCine\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ApiCine\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\ApiCine\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ApiCine\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-07T13:40:38.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "App.razor",
               "DocumentMoniker": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\ProjectWebPelis\\Components\\App.razor",
               "RelativeDocumentMoniker": "ProjectWebPelis\\Components\\App.razor",
@@ -47,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "PagePrincipal.razor",
               "DocumentMoniker": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\ProjectWebPelis\\Components\\Pages\\PagePrincipal.razor",
               "RelativeDocumentMoniker": "ProjectWebPelis\\Components\\Pages\\PagePrincipal.razor",
@@ -55,11 +89,12 @@
               "RelativeToolTip": "ProjectWebPelis\\Components\\Pages\\PagePrincipal.razor",
               "ViewState": "AgIAAA0AAAAAAAAAAAAuwDAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-04T10:01:09.063Z"
+              "WhenOpened": "2026-09-04T10:01:09.063Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "PeliculaServices.cs",
               "DocumentMoniker": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\ProjectWebPelis\\Services\\PeliculaServices.cs",
               "RelativeDocumentMoniker": "ProjectWebPelis\\Services\\PeliculaServices.cs",
@@ -67,31 +102,34 @@
               "RelativeToolTip": "ProjectWebPelis\\Services\\PeliculaServices.cs",
               "ViewState": "AgIAAPIAAAAAAAAAAAAAwAkBAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-04T05:17:42.047Z"
+              "WhenOpened": "2026-09-04T05:17:42.047Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "SesionUsuarioService.cs",
               "DocumentMoniker": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\ProjectWebPelis\\Services\\SesionUsuarioService.cs",
               "RelativeDocumentMoniker": "ProjectWebPelis\\Services\\SesionUsuarioService.cs",
               "ToolTip": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\ProjectWebPelis\\Services\\SesionUsuarioService.cs",
               "RelativeToolTip": "ProjectWebPelis\\Services\\SesionUsuarioService.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAA6wBYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAiwBYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-04T05:03:47.605Z"
+              "WhenOpened": "2026-09-04T05:03:47.605Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Login.razor",
               "DocumentMoniker": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\ProjectWebPelis\\Components\\Pages\\Login.razor",
               "RelativeDocumentMoniker": "ProjectWebPelis\\Components\\Pages\\Login.razor",
               "ToolTip": "C:\\Users\\Ale_C\\source\\repos\\ProjectWebPelicula-(1.4.3)\\ProjectWebPelis\\Components\\Pages\\Login.razor",
               "RelativeToolTip": "ProjectWebPelis\\Components\\Pages\\Login.razor",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC8AAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAIBJwC8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-04T05:03:21.948Z"
+              "WhenOpened": "2026-09-04T05:03:21.948Z",
+              "EditorCaption": ""
             }
           ]
         }
